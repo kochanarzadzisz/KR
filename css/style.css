@@ -1,0 +1,581 @@
+@import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre&family=Cinzel:wght@400;700;900&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #F9F5F2;
+}
+
+.burger-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1em;
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  z-index: 1000;
+}
+.burger-btn:focus {
+  outline: none;
+  border: 0.2px solid rgba(255, 192, 203, 0);
+  border-radius: 8px;
+}
+.burger-btn:hover .burger-btn__bars::after, .burger-btn:hover .burger-btn__bars::before {
+  width: 100%;
+}
+.burger-btn__box {
+  position: relative;
+  width: 40px;
+  height: 30px;
+}
+.burger-btn__bars, .burger-btn__bars::after, .burger-btn__bars::before {
+  position: absolute;
+  right: 0;
+  height: 3px;
+  content: "";
+  background-color: rgb(0, 0, 0);
+  transition: width 0.3s;
+}
+.burger-btn__bars {
+  width: 100%;
+}
+.burger-btn__bars::after {
+  top: 13px;
+  width: 60%;
+}
+.burger-btn__bars::before {
+  top: 27px;
+  width: 30%;
+  transition-delay: 0.1s;
+}
+
+.navbar-mobile {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  transform: translateX(100%);
+  transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+  background-color: pink;
+  z-index: 100;
+}
+.navbar-mobile--active {
+  transform: translateX(0);
+}
+.navbar-mobile__link {
+  position: relative;
+  display: block;
+  margin: 0.5em 0;
+  padding: 0.5em 2em;
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+.navbar-mobile__link::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  transform: scaleY(0);
+  background-color: black;
+  transition: transform 0.3s;
+  content: "";
+}
+.navbar-mobile__link:hover::before {
+  transform: scaleY(1);
+}
+
+.navbar-desktop {
+  display: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 25px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.logo img {
+  display: flex;
+  position: relative;
+  left: 20px;
+  width: 225px;
+  height: 56px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1400px;
+  width: 100%;
+}
+
+.background .triangle {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  -webkit-clip-path: polygon(0% 100%, 100% 0%, 0% 0%);
+          clip-path: polygon(0% 100%, 100% 0%, 0% 0%);
+  background-color: pink;
+}
+.background .triangle_reversed {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  -webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+          clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  background-color: pink;
+}
+
+.flex-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 100%;
+}
+
+h1 {
+  font-size: 1.1rem;
+  font-family: "Abhaya Libre", serif;
+  font-weight: normal;
+  text-align: center;
+  width: 250px;
+  margin: 50px 0;
+}
+
+h2 {
+  font-family: "Cinzel", serif;
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: black;
+  text-decoration: underline;
+}
+
+h3 {
+  font-family: "Cinzel", serif;
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+
+figure {
+  height: 286px;
+}
+
+.images {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  overflow: hidden;
+}
+.images img {
+  position: relative;
+  display: flex;
+  width: 161px;
+  height: 286px;
+  margin: 0 5px;
+}
+.images .img-hidden {
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
+  bottom: 286px;
+}
+
+.thumbnail:hover {
+  opacity: 1;
+  position: relative;
+}
+
+p {
+  font-size: 1.1rem;
+  font-family: "Abhaya Libre", serif;
+}
+
+.inspiration {
+  text-align: center;
+  margin-top: 60px;
+}
+.inspiration__btn {
+  width: 147px;
+  height: 33px;
+  font-family: "Abhaya Libre", serif;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  border: none;
+  background-color: #FF31A6;
+}
+.inspiration p {
+  width: 190px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.inspiration a {
+  color: white;
+  text-decoration: none;
+}
+
+.business_card {
+  display: grid;
+  position: relative;
+  margin-top: 60px;
+}
+.business_card h3 {
+  font-size: 4vw;
+  margin: 3vw 0;
+}
+.business_card p {
+  font-size: 3.6vw;
+  margin: 3vw 0;
+  width: 55vw;
+}
+.business_card a {
+  color: white;
+  text-decoration: none;
+}
+.business_card__btn {
+  position: relative;
+  font-family: "Abhaya Libre", serif;
+  font-size: 3.6vw;
+  height: 7vw;
+  width: 57vw;
+  border-radius: 5vw;
+  border: none;
+  color: white;
+  background-color: #FF31A6;
+}
+.business_card img {
+  position: absolute;
+  width: 100%;
+}
+.business_card mark {
+  background-color: #FF31A6;
+}
+
+.text {
+  margin-left: 40%;
+  display: inline;
+  position: relative;
+}
+
+.bricks {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-gap: 2vw;
+  margin: 20vw 5px 0px 5px;
+}
+.bricks .brick {
+  display: flex;
+  line-height: 5vw;
+  margin: 0 auto;
+  width: 46vw;
+  height: 32vw;
+  background-image: url("../assets/STRONA KLAUDII/2.png");
+  background-size: cover;
+}
+.bricks .brick a {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-family: "Cinzel", serif;
+  font-weight: bold;
+  font-size: 4.5vw;
+  color: white;
+  text-decoration: none;
+}
+.bricks .banner {
+  grid-column: 1/span 2;
+}
+.bricks .banner img {
+  width: 94vw;
+}
+
+.footer {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  top: 200px;
+}
+.footer .logo {
+  top: 0px;
+  margin-bottom: 0px;
+  width: auto;
+}
+.footer .logo img {
+  width: 300px;
+  height: 75px;
+  margin-right: 0px;
+  left: 0px;
+}
+
+.remont {
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.remont p {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Cinzel", serif;
+}
+.remont img {
+  border: black solid;
+  position: absolute;
+  box-shadow: 8px 8px 24px 0px rgb(66, 68, 90);
+}
+
+@media (min-width: 768px) {
+  .burger-btn {
+    top: 40px;
+    right: 40px;
+  }
+  .logo {
+    top: 20px;
+  }
+  .logo img {
+    left: 50px;
+    width: 406px;
+    height: 101px;
+  }
+  .business_card h3 {
+    width: 70%;
+    font-size: 3vw;
+    margin-top: 3vw;
+    margin-bottom: 0;
+  }
+  .business_card p {
+    font-size: 2.5vw;
+    margin: 1.5vw 0;
+    width: 54vw;
+  }
+  .business_card__btn {
+    font-size: 2vw;
+    height: 4vw;
+    width: 34vw;
+    border-radius: 2.7vw;
+    margin-top: 1vw;
+  }
+  .business_card img {
+    content: url("../assets/STRONA KLAUDII/background.png");
+    position: absolute;
+    width: 100%;
+  }
+  .bricks {
+    margin: 10vw 5px 0px 5px;
+  }
+}
+@media (min-width: 992px) {
+  .logo img {
+    width: 380px;
+    height: 95px;
+    margin-right: 30px;
+  }
+  .navbar-desktop {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    text-wrap: nowrap;
+    width: 100%;
+  }
+  .navbar-desktop__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-left: 50px;
+  }
+  .navbar-desktop__link {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .navbar-mobile {
+    display: none;
+  }
+  .burger-btn {
+    display: none;
+  }
+  .background .triangle {
+    height: 800px;
+  }
+  .background .triangle_reversed {
+    height: 400px;
+  }
+  h1 {
+    font-size: 1.6rem;
+    width: 450px;
+  }
+  figure {
+    height: 486px;
+  }
+  .images {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .images img {
+    position: relative;
+    display: flex;
+    width: 274px;
+    height: 486px;
+    margin: 0 5px;
+  }
+  .images .img-hidden {
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
+    bottom: 486px;
+  }
+  .thumbnail:hover {
+    opacity: 1;
+    position: relative;
+  }
+  p {
+    font-size: 1.6rem;
+  }
+  .inspiration__btn {
+    width: 200px;
+    height: 45px;
+    font-size: 1.6rem;
+  }
+  .inspiration p {
+    width: auto;
+    margin-bottom: 20px;
+  }
+  .business_card {
+    max-width: 992px;
+    margin: 60px auto;
+  }
+  .business_card h3 {
+    font-size: 2rem;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  .business_card p {
+    width: 89%;
+    font-size: 1.6rem;
+    margin: 10px 0;
+  }
+  .business_card__btn {
+    width: 400px;
+    height: 45px;
+    font-family: "Abhaya Libre", serif;
+    font-size: 1.6rem;
+    border-radius: 12px;
+    border: none;
+    background-color: #FF31A6;
+  }
+  .business_background {
+    background-image: url("../assets/STRONA KLAUDII/business_background.png");
+    background-size: cover;
+    background-color: #FAB8C4;
+    height: 544.05px;
+  }
+  .bricks {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 6vw;
+  }
+  .bricks .brick {
+    line-height: normal;
+    width: 265px;
+    height: 189px;
+  }
+  .bricks .brick a {
+    font-size: 1.6rem;
+  }
+  .bricks .banner {
+    grid-column: 1/span 3;
+  }
+  .bricks .banner img {
+    max-width: 1400px;
+  }
+  .footer {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    top: 250px;
+  }
+  .footer .logo {
+    top: 0px;
+    margin-bottom: 0px;
+    width: auto;
+  }
+  .footer .logo img {
+    width: 380px;
+    height: 95px;
+    margin-right: 0px;
+    left: 0px;
+  }
+}
+@media (min-width: 1170px) {
+  .business_card {
+    max-width: 1170px;
+  }
+  .business_card h3 {
+    font-size: 2.4rem;
+    margin-top: 50px;
+  }
+  .business_card p {
+    width: 79%;
+  }
+  .business_card__btn {
+    margin-top: 30px;
+  }
+  .business_background {
+    height: 641.67px;
+  }
+  .bricks .brick {
+    width: 298px;
+    height: 213px;
+  }
+  .bricks .brick a {
+    width: 298px;
+    padding: 12% 12%;
+  }
+}
+@media (min-width: 1400px) {
+  .business_card {
+    max-width: 1400px;
+  }
+  .business_card h3 {
+    font-size: 2.6rem;
+    margin-top: 100px;
+  }
+  .business_card p {
+    width: 81%;
+    margin-top: 60px;
+  }
+  .business_card__btn {
+    margin-top: 80px;
+  }
+  .business_background {
+    height: 767.81px;
+  }
+  .bricks .brick {
+    width: 340px;
+    height: 243px;
+  }
+  .bricks .brick a {
+    width: 340px;
+  }
+}/*# sourceMappingURL=style.css.map */
